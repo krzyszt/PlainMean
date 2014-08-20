@@ -15,15 +15,14 @@ module.exports = function(grunt) {
     },
     
     jshint: {
-      files: ['Gruntfile.js', 'public/**/*.js'],
+      files: [
+              'Gruntfile.js',
+              'app.js',
+              'routes/**/*.js',
+              'public/**/*.js',
+              ],
       options: {
-        // options here to override JSHint defaults
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true,
-          document: true
-        }
+          jshintrc: '.jshintrc'
       }
     },
     watch: {
