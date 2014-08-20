@@ -13,4 +13,9 @@ angular.module('plainMean.controllers',[])
      $scope.customers.push({ name: 'Dummy Company 6', city: 'London'});
      $scope.customers.push({ name: 'Dummy Company 7', city: 'Croydon'});
      $scope.customers.push({ name: 'Dummy Company 8', city: 'Manchester'});
+   }])
+   .controller('NewCtrl',['$scope', function($scope){
+       $scope.createCustomer = function(){
+           
+       };
    }]);
