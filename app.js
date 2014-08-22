@@ -32,6 +32,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/customer', routes.list);
+app.get('/customer/:id', routes.item);
+app.post('/customer', routes.create);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
