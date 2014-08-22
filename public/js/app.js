@@ -1,10 +1,12 @@
 angular.module('plainMean',[
-    'plainMean.controllers'
+//    'ngRoute',
+    'plainMean.controllers',
+    'customerServices'
     ])
     .config(['$routeProvider', function($routeProvider){
         $routeProvider.
-            when('/list', { templateUrl: 'partials/list.html', controller: 'ListCtrl' }).
-            when('/item/:customerId', { templateUrl: 'partials/item.html', controller: 'ItemCtrl' }).
+            when('/customer', { templateUrl: 'partials/list.html', controller: 'ListCtrl' }).
+            when('/customer/:id', { templateUrl: 'partials/item.html', controller: 'ItemCtrl' }).
             when('/new', { templateUrl: 'partials/new.html', controller: 'NewCtrl' }).
-            otherwise({ redirectTo: '/list' });
+            otherwise({ redirectTo: '/customer' });
     }]);

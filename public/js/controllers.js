@@ -3,20 +3,21 @@
  */
 
 angular.module('plainMean.controllers',[])
-   .controller('ListCtrl',['$scope', function($scope){
-     $scope.customers = [
-         { name: 'Dummy Company 1', city: 'Bristol'},
-         { name: 'Dummy Company 2', city: 'London'},  
-         { name: 'Dummy Company 3', city: 'Croydon'},
-         { name: 'Dummy Company 4', city: 'Manchester'},
-         { name: 'Dummy Company 5', city: 'Bristol'},
-         { name: 'Dummy Company 6', city: 'London'},
-         { name: 'Dummy Company 7', city: 'Croydon'},
-         { name: 'Dummy Company 8', city: 'Manchester'}
-     ];
+   .controller('ListCtrl', ['$scope','Customer',function($scope, Customer){
+       $scope.customers = Customer.query();
    }])
-   .controller('NewCtrl',['$scope', function($scope){
+   .controller('ItemCtrl',[ '$scope', 'routeParams', 'Customer', function($scope, $routeParams, Customer){
+       console.log($routeParams);
+       $scope.customer = Customer.get({ customerId: $routeParams.customerId });
+   }])
+   .controller('NewCtrl',['$scope', 'Customer', function($scope, Customer){
        $scope.createCustomer = function(){
-           
+           Customer.save($scope.customer, function(ref){
+               $scope.customer._id = ref._id;
+               $scope.customer = {
+                       name: '',
+                       city: ''
+               }
+           });
        };
    }]);

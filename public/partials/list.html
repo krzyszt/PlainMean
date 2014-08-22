@@ -20,7 +20,7 @@
 	</ul>
 	<ul class="list-group" ng-switch-default>
 		<li class="list-group-item" ng-repeat="customer in customers | filter:query">
-			<a href="#/item/{{customer._id}}">{{customer.name}}</a> <i>{{ customer.city }}</i>
+			<a href="#/customer/{{customer._id}}">{{customer.name}}</a> <i>{{ customer._id }}</i>
 		</li>
 	</ul>
 </div>
