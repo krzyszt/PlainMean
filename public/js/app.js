@@ -1,5 +1,5 @@
 angular.module('plainMean',[
-//    'ngRoute',
+    'ngRoute',
     'plainMean.controllers',
     'customerServices'
     ])
