@@ -2,13 +2,13 @@
  * Controllers
  */
 
-angular.module('plainMean.controllers',[])
-   .controller('ListCtrl', ['$scope','Customer',function($scope, Customer){
+angular.module('plainMean.controllers',['ngRoute'])
+   .controller('ListCtrl', ['$scope','$route','Customer',function($scope, $route, Customer){
        $scope.customers = Customer.query();
    }])
-   .controller('ItemCtrl',[ '$scope', 'routeParams', 'Customer', function($scope, $routeParams, Customer){
-       console.log($routeParams);
-       $scope.customer = Customer.get({ customerId: $routeParams.customerId });
+   .controller('ItemCtrl', ['$scope','$routeParams', 'Customer', function($scope, $routeParams, Customer){
+       $scope.customer = Customer.get({ customerId: $routeParams.id });
+       console.log($scope.customer);
    }])
    .controller('NewCtrl',['$scope', 'Customer', function($scope, Customer){
        $scope.createCustomer = function(){
