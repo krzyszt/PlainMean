@@ -17,8 +17,7 @@ html(lang="en" ng-app="plainMean")
 		<script src="/js/controllers.js"></script>
 		<script src="/js/services.js"></script>
 	body
-		nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-			div.navbar-header
-				a.navbar-brand(href='#/polls')= title
 		div.container
+			div(ng-include="'admin/nav.tpl.html'")
 			div(ng-view)
+			div(ng-include="'admin/footer.tpl.html'")
