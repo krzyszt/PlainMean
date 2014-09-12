@@ -10,7 +10,7 @@ var CustomerSchema = require('../models/Customers.js').CustomerSchema;
 var CustomerModel = db.model('customer', CustomerSchema);
 exports.index = function(req, res){
     res.render('index', { title: 'PlainMean - a simple Mongo/Express/Angular/Node application' });
-  };
+};
 //JSON API for list of customers
  exports.list = function(req,res){
      CustomerModel.find({}, function(error, list){

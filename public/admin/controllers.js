@@ -3,6 +3,9 @@
  */
 
 angular.module('plainMean.controllers',['ngRoute'])
+   .controller('HomeCtrl',["$scope", function($scope){
+       
+   }])
    .controller('ListCtrl', ['$scope','$route','Customer',function($scope, $route, Customer){
        $scope.customers = Customer.query();
    }])
