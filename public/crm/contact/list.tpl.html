@@ -1,4 +1,33 @@
 <div class="jumbotron">
 	<h2>Contact List</h2>
-	{{ contactFirst | uppercase }}
+	{{ contactFirst | lowercase }}
 </div>
+
+<div class="row">
+	<div class="col-lg-3">
+		<div class="input-group">
+			<span class="input-group-addon">
+        		<input type="checkbox" ng-model="checked">
+     		</span>
+     		<input type="text" class="form-control" value="Hide Button" readonly="readonly">
+		</div>	
+	</div>
+	<div class="col-lg-9">
+		<button class="btn btn-info" ng-hide="checked">Press Me</button>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-3">
+		<div class="input-group">
+			<span class="input-group-addon">
+        		<input type="checkbox" ng-model="disable">
+     		</span>
+     		<input type="text" class="form-control" value="Disable Button" readonly="readonly">
+		</div>	
+	</div>
+	<div class="col-lg-9">
+		<button class="btn btn-info" ng-disabled="!disable">Press Me</button>
+	</div>
+</div>
+
