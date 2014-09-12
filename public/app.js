@@ -9,5 +9,6 @@ angular.module('plainMean',[
             when('/customer', { templateUrl: 'admin/list.tpl.html', controller: 'ListCtrl' }).
             when('/customer/:id', { templateUrl: 'admin/item.tpl.html', controller: 'ItemCtrl' }).
             when('/new', { templateUrl: 'admin/new.tpl.html', controller: 'NewCtrl' }).
+            when('/contact', { templateUrl: 'crm/contact/list.tpl.html', controller: 'ContactListCtrl' }).
             otherwise({ redirectTo: '/' });
     }]);
