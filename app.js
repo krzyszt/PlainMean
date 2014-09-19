@@ -39,6 +39,7 @@ app.post('/customer', routes.create);
 app.get('/users', user.list);
 app.get('/contact', contact.list);
 app.get('/contact/populate', contact.populate);
+app.post('/contact', contact.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

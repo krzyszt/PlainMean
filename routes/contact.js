@@ -56,6 +56,24 @@ function createFakeContacts(count) {
 exports.list = function(req, res){
   ContactModel.find({},function(err,list){
       res.json(list);
-  })
+  });
+};
 
+// JSON API for creating a new contact
+exports.create = function(req,res){
+   var reqBody = req.body,
+       contactObj = {
+          firstName: reqBody.firstName, 
+          lastName: reqBody.lastName,
+          email: reqBody.email
+       };
+   var contact = new ContactModel(contactObj);
+   contact.save(function(err,doc){
+      if(err || !doc){
+//          throw 'Error';
+            console.log('error');
+      } else {
+          res.json(doc);
+      }
+    });
 };
