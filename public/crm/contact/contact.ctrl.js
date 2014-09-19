@@ -5,6 +5,9 @@ angular.module("plainMean")
     .controller('ContactPopulateCtrl', ['$scope','$route','ContactPopulate',function($scope, $route, ContactPopulate){
        $scope.contacts = ContactPopulate.query();
    }])
+   .controller('ContactItemCtrl', ['$scope','$routeParams', 'Contact', function($scope, $routeParams, Contact){
+       $scope.contact = Contact.get({ contactId: $routeParams.id });
+   }])
    .controller('ContactNewCtrl',['$scope', 'Contact', function($scope, Contact){
        $scope.createContact = function(){
            Contact.save($scope.contact, function(ref){

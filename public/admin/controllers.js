@@ -20,7 +20,7 @@ angular.module('plainMean.controllers',['ngRoute'])
                $scope.customer = {
                        name: '',
                        city: ''
-               }
+               };
            });
        };
    }]);
