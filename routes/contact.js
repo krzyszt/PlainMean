@@ -59,6 +59,18 @@ exports.list = function(req, res){
   });
 };
 
+//JSON API for getting a single contact
+ exports.item = function(req,res){
+     var id = req.params.id;
+     ContactModel.findById(id, function(error, item){
+        if(item){
+            res.json(item);
+        } else {
+            res.json({error: true});
+        } 
+     });
+ };
+
 // JSON API for creating a new contact
 exports.create = function(req,res){
    var reqBody = req.body,

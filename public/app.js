@@ -10,6 +10,7 @@ angular.module('plainMean',[
             when('/customer/:id', { templateUrl: 'admin/item.tpl.html', controller: 'ItemCtrl' }).
             when('/new', { templateUrl: 'admin/new.tpl.html', controller: 'NewCtrl' }).
             when('/contact', { templateUrl: 'crm/contact/list.tpl.html', controller: 'ContactListCtrl' }).
+            when('/contact/:id', { templateUrl: 'crm/contact/item.tpl.html', controller: 'ContactItemCtrl' }).
             when('/contact/new', { templateUrl: 'crm/contact/new.tpl.html', controller: 'ContactNewCtrl' }).
             when('/contact/populate', { templateUrl: 'crm/contact/populate.tpl.html', controller: 'ContactPopulateCtrl' }).
             otherwise({ redirectTo: '/' });
