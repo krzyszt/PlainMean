@@ -8,15 +8,18 @@ var mongoose = require('mongoose');
 var db = mongoose.createConnection('localhost', 'plainmean');
 var CustomerSchema = require('../models/Customers.js').CustomerSchema;
 var CustomerModel = db.model('customer', CustomerSchema);
+
 exports.index = function(req, res){
     res.render('index', { title: 'PlainMean - a simple Mongo/Express/Angular/Node application' });
 };
+
 //JSON API for list of customers
- exports.list = function(req,res){
+exports.list = function(req,res){
      CustomerModel.find({}, function(error, list){
          res.json(list);
      });
  };
+
  //JSON API for getting a single customer
  exports.item = function(req,res){
      var id = req.params.id;
@@ -28,8 +31,9 @@ exports.index = function(req, res){
         } 
      });
  };
- //JSON API for creating a new customer
- exports.create = function(req,res){
+
+//JSON API for creating a new customer
+exports.create = function(req,res){
    var reqBody = req.body,
        customerObj = {name: reqBody.name, city: reqBody.city};
    var customer = new CustomerModel(customerObj);
