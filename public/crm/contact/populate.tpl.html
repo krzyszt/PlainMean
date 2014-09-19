@@ -1,0 +1,8 @@
+<div class="row" >
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="contact in contacts">
+			<a href="#/contact/{{contact._id}}">{{contact.firstName}} {{ contact.lastName }} </a> <i>{{ contact.email | lowercase }}</i>
+		</li>
+	</ul>
+</div>
+<p>&nbsp;</p>
