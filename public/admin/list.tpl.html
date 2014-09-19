@@ -16,7 +16,7 @@
 </div>
 <div class="row" ng-switch on="customers.length">
 	<ul ng-switch-when="0">
-		<li><em>No customers in database. Would you like to <a href="#/new">create one</a>?</li>
+		<li>No customers in database. Would you like to <a href="#/new">create one</a>?</li>
 	</ul>
 	<ul class="list-group" ng-switch-default>
 		<li class="list-group-item" ng-repeat="customer in customers | filter:query">

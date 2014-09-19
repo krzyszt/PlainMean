@@ -3,7 +3,7 @@
 </div>
 <div class="row">
 	<div class="col-xs-5">
-		<a href="#/new" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Contact</a>
+		<a href="#/contact/new" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Contact</a>
 	</div>
 	<div class="col-xs-7">
 		<input type="text" class="form-control" ng-model="query" placeholder="Search for a contact">
@@ -16,7 +16,7 @@
 </div>
 <div class="row" ng-switch on="contacts.length">
 	<ul ng-switch-when="0">
-		<li><em>No contacts in database. Would you like to <a href="#/contact/populate">create fake contacts</a>?</li>
+		<li>No contacts in database. Would you like to <a href="#/contact/populate">create fake contacts</a>?</li>
 	</ul>
 
 	<ul class="list-group" ng-switch-default>
