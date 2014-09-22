@@ -1,12 +1,12 @@
 
 /*
- * GET home page.
+ * GET customers listing.
  */
 
 var mongoose = require('mongoose');
 // Getting Connection object
 var db = mongoose.createConnection('localhost', 'plainmean');
-var CustomerSchema = require('../models/Customers.js').CustomerSchema;
+var CustomerSchema = require('../../server/models/Customers.js').CustomerSchema;
 var CustomerModel = db.model('customer', CustomerSchema);
 
 //JSON API for list of customers

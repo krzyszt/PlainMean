@@ -4,10 +4,10 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , contact = require('./routes/contact')
-  , customer = require('./routes/customer')
+  , routes = require('./server/routes')
+  , user = require('./server/routes/user')
+  , contact = require('./server/routes/contact')
+  , customer = require('./server/routes/customer')
   , http = require('http')
   , path = require('path');
 
@@ -15,7 +15,7 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/server/views');
 app.set('view engine', 'jade');
 
 // a directory that is used to store the uploaded images
@@ -45,7 +45,9 @@ app.post('/api/contact', contact.create);
 app.get('/api/contact/:id', contact.item);
 app.get('/api/contact/populate', contact.populate);
 
-app.get('/users', user.list);
+app.get('/api/user', user.list);
+app.post('/api/user', user.create);
+app.get('/api/user/:id', user.item);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

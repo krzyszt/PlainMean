@@ -1,0 +1,27 @@
+<div class="page-header">
+	<h1>Users List</h1>
+</div>
+<div class="row">
+	<div class="col-xs-5">
+		<a href="#/api/user/0" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New User</a>
+	</div>
+	<div class="col-xs-7">
+		<input type="text" class="form-control" ng-model="query" placeholder="Search for a user">
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<hr>
+	</div>
+</div>
+<div class="row" ng-switch on="users.length">
+	<ul ng-switch-when="0">
+		<li>No users in database. Would you like to <a href="#/api/user/0">create one</a>?</li>
+	</ul>
+	<ul class="list-group" ng-switch-default>
+		<li class="list-group-item" ng-repeat="user in users | filter:query">
+			<a href="#/api/user/{{user._id}}">{{user.firstName}} {{ user.lastName }} </a> <i>{{ user.email | lowercase }}</i>
+		</li>
+	</ul>
+</div>
+<p>&nbsp;</p>

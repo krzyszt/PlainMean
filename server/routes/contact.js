@@ -1,10 +1,10 @@
 
 /*
- * GET users listing.
+ * GET contacts listing.
  */
 var mongoose = require('mongoose');
 var db = mongoose.createConnection('localhost','plainmean');
-var ContactSchema = require('../models/Contacts.js').ContactSchema;
+var ContactSchema = require('../../server/models/Contacts.js').ContactSchema;
 var ContactModel = db.model('contact',ContactSchema);
 
 exports.populate = function(req,res){
