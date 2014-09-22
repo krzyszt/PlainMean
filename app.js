@@ -37,10 +37,10 @@ app.get('/customer', routes.list);
 app.get('/customer/:id', routes.item);
 app.post('/customer', routes.create);
 app.get('/users', user.list);
-app.get('/contact', contact.list);
-app.get('/contact/populate', contact.populate);
-app.post('/contact', contact.create);
-app.get('/contact/:id', contact.item);
+app.get('/api/contact', contact.list);
+app.get('/api/contact/populate', contact.populate);
+app.post('/api/contact', contact.create);
+app.get('/api/contact/:id', contact.item);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
