@@ -1,7 +1,8 @@
 <div class="page-header">
-	<h3>Create New Customer</h3>
+	<h3>{{ pageTitle }}</h3>
 </div>
-<form role="form" ng-submit="createCustomer()">
+<div class="jumbotron">
+	<form role="form" ng-submit="save()">
  	<div class="form-group">
  		<label for="customerName">Customer Name</label>
  		<input type="text" ng-model="customer.name" class="form-control" id="customerName" placeholder="Customer name">
@@ -13,11 +14,12 @@
 	<p><hr></p>
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="#/customer" class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Customer's List</a>
+			<a href="#/api/customer" class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Customer's List</a>
         </div>
         <div class="col-xs-6">
-			<button class="btn btn-primary pull-right" type="submit">Create &raquo;</button>
+			<button class="btn btn-primary pull-right" type="submit">Save &raquo;</button>
 		</div>
 	</div>
 	<p>&nbsp;</p>
 </form>
+</div>

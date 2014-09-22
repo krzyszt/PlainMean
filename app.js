@@ -7,7 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , contact = require('./routes/contact')
-  , contact = require('./routes/customer')
+  , customer = require('./routes/customer')
   , http = require('http')
   , path = require('path');
 
