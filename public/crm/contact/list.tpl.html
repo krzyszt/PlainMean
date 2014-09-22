@@ -3,7 +3,7 @@
 </div>
 <div class="row">
 	<div class="col-xs-5">
-		<a href="#/contact/new" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Contact</a>
+		<a href="#/api/contact/0" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Contact</a>
 	</div>
 	<div class="col-xs-7">
 		<input type="text" class="form-control" ng-model="query" placeholder="Search for a contact">
@@ -21,7 +21,7 @@
 
 	<ul class="list-group" ng-switch-default>
 		<li class="list-group-item" ng-repeat="contact in contacts | filter:query">
-			<a href="#/contact/{{contact._id}}">{{contact.firstName}} {{ contact.lastName }} </a> <i>{{ contact.email | lowercase }}</i>
+			<a href="#/api/contact/{{contact._id}}">{{contact.firstName}} {{ contact.lastName }} </a> <i>{{ contact.email | lowercase }}</i>
 		</li>
 	</ul>
 </div>

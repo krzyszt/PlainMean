@@ -1,8 +1,8 @@
 <div class="page-header">
-	<h3>Update Contact</h3>
+	<h3>{{ pageTitle }}</h3>
 </div>
 <div class="jumbotron">
-	<form role="form" ng-submit="updateContact()">
+	<form role="form" ng-submit="save()" >
  	<div class="form-group">
  		<label for="firstName">First Name</label>
  		<input type="text" ng-model="contact.firstName" class="form-control" id="firstName" placeholder="Contact First Name">
@@ -18,7 +18,7 @@
 	<p><hr></p>
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="#/contact" class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Contact's List</a>
+			<a href="#/api/contact" class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Contact's List</a>
         </div>
         <div class="col-xs-6">
 			<button class="btn btn-primary pull-right" type="submit">Save &raquo;</button>

@@ -3,15 +3,15 @@ angular.module('plainMean',[
     'plainMean.controllers',
     'customerServices'
     ])
-    .config(['$routeProvider', function($routeProvider){
+   .config(['$routeProvider', function($routeProvider){
         $routeProvider.
             when('/', { templateUrl: 'admin/home.tpl.html', controller: 'HomeCtrl' }).
-            when('/customer', { templateUrl: 'admin/list.tpl.html', controller: 'ListCtrl' }).
-            when('/customer/:id', { templateUrl: 'admin/item.tpl.html', controller: 'ItemCtrl' }).
-            when('/new', { templateUrl: 'admin/new.tpl.html', controller: 'NewCtrl' }).
-            when('/contact', { templateUrl: 'crm/contact/list.tpl.html', controller: 'ContactListCtrl' }).
-            when('/contact/:id', { templateUrl: 'crm/contact/item.tpl.html', controller: 'ContactItemCtrl' }).
-            when('/contact/new', { templateUrl: 'crm/contact/new.tpl.html', controller: 'ContactNewCtrl' }).
-            when('/contact/populate', { templateUrl: 'crm/contact/populate.tpl.html', controller: 'ContactPopulateCtrl' }).
+//            when('/api/:model/:id', { templateUrl: 'admin/home_item.tpl.html', controller: 'HomeCtrl' }).
+//            when('/customer', { templateUrl: 'admin/list.tpl.html', controller: 'ListCtrl' }).
+//            when('/customer/:id', { templateUrl: 'admin/item.tpl.html', controller: 'ItemCtrl' }).
+//            when('/new', { templateUrl: 'admin/new.tpl.html', controller: 'NewCtrl' }).
+            when('/api/contact', { templateUrl: 'crm/contact/list.tpl.html', controller: 'ContactListCtrl' }).
+            when('/api/contact/:id', { templateUrl: 'crm/contact/item.tpl.html', controller: 'ContactItemCtrl' }).
+            when('/api/contact/populate', { templateUrl: 'crm/contact/populate.tpl.html', controller: 'ContactPopulateCtrl' }).
             otherwise({ redirectTo: '/' });
     }]);
