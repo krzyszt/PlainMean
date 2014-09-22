@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , contact = require('./routes/contact')
+  , contact = require('./routes/customer')
   , http = require('http')
   , path = require('path');
 
@@ -33,14 +34,18 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/customer', routes.list);
-app.get('/customer/:id', routes.item);
-app.post('/customer', routes.create);
-app.get('/users', user.list);
+
+app.get('/api/customer', customer.list);
+app.get('/api/customer/:id', customer.item);
+app.post('/api/customer', customer.create);
+//app.get('/api/customer/populate', customer.populate);
+
 app.get('/api/contact', contact.list);
-app.get('/api/contact/populate', contact.populate);
 app.post('/api/contact', contact.create);
 app.get('/api/contact/:id', contact.item);
+app.get('/api/contact/populate', contact.populate);
+
+app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
