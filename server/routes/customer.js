@@ -14,21 +14,17 @@ exports.list = function(req,res){
          res.json(list);
          
       })
-   
-//     CustomerModel.find({}, function(error, list){
-//         res.json(list);
-//     });
  };
 
  //JSON API for getting a single customer
  exports.item = function(req,res){
      var id = req.params.id;
-     CustomerModel.findById(id, function(error, item){
-        if(item){
-            res.json(item);
+     customerModel.item(id, function(err,item){
+        if (err || !item) {
+           res.json({error: true});
         } else {
-            res.json({error: true});
-        } 
+           res.json(item);
+        }
      });
  };
 
@@ -36,13 +32,11 @@ exports.list = function(req,res){
 exports.create = function(req,res){
    var reqBody = req.body,
        customerObj = {name: reqBody.name, city: reqBody.city};
-   var customer = new CustomerModel(customerObj);
-   customer.save(function(err,doc){
-      if(err || !doc){
-//          throw 'Error';
+       customerModel.create(customerObj, function(err, doc){
+         if(err || !doc){
             console.log('error');
-      } else {
-          res.json(doc);
-      }
-    });
+         } else {
+            res.json(doc);
+         }
+       });
 };
