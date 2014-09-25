@@ -3,17 +3,21 @@
  * GET customers listing.
  */
 
+var customerModel = require('./../models/Customer');
 var mongoose = require('mongoose');
-// Getting Connection object
-var db = mongoose.createConnection('localhost', 'plainmean');
-var CustomerSchema = require('../../server/models/Customers.js').CustomerSchema;
-var CustomerModel = db.model('customer', CustomerSchema);
+//var CustomerModel = mongoose.model('Customers');
 
 //JSON API for list of customers
 exports.list = function(req,res){
-     CustomerModel.find({}, function(error, list){
+   
+      customerModel.customerlist(function(list){
          res.json(list);
-     });
+         
+      })
+   
+//     CustomerModel.find({}, function(error, list){
+//         res.json(list);
+//     });
  };
 
  //JSON API for getting a single customer
