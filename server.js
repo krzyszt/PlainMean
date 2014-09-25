@@ -4,6 +4,7 @@
  */
 
 var express = require('express')
+  , db = require('./server/models/db')
   , routes = require('./server/routes')
   , user = require('./server/routes/user')
   , contact = require('./server/routes/contact')
@@ -43,7 +44,7 @@ app.post('/api/customer', customer.create);
 app.get('/api/contact', contact.list);
 app.post('/api/contact', contact.create);
 app.get('/api/contact/:id', contact.item);
-app.get('/api/contact/populate', contact.populate);
+app.get('/api/populate', contact.populate);
 
 app.get('/api/user', user.list);
 app.post('/api/user', user.create);

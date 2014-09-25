@@ -3,9 +3,7 @@
  * GET users listing.
  */
 var mongoose = require('mongoose');
-var db = mongoose.createConnection('localhost','plainmean');
-var UserSchema = require('../../server/models/Users.js').UserSchema;
-var UserModel = db.model('user', UserSchema);
+var UserModel = mongoose.model('Users');
 
 exports.populate = function(req,res){
    populateFakeData(createFakeUsers(10)); 
