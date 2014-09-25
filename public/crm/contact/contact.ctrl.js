@@ -1,4 +1,4 @@
-angular.module("plainMean")
+angular.module("plainMean.contact", [])
     .controller('ContactListCtrl', ['$scope','$route','Contact',function($scope, $route, Contact){
        $scope.contacts = Contact.query();
    }])

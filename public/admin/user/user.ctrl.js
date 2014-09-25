@@ -1,4 +1,4 @@
-angular.module("plainMean")
+angular.module("plainMean.user",[])
    .controller( 'UserListCtrl', ['$scope', '$route', 'User' , function( $scope, $route, User){
        $scope.users = User.query();
    }])

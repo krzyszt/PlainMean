@@ -1,4 +1,4 @@
-angular.module('plainMean')
+angular.module('plainMean.customer', [])
    .controller('CustomerListCtrl', ['$scope','$route','Customer',function($scope, $route, Customer){
        $scope.customers = Customer.query();
    }])
