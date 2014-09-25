@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h1>Contacts List <a href="#/test">Test</a></h1>
+    <h1>Contacts List</h1>
 </div>
 <div class="row">
 	<div class="col-xs-5">
@@ -16,7 +16,7 @@
 </div>
 <div class="row" ng-switch on="contacts.length">
 	<ul ng-switch-when="0">
-		<li>No contacts in database. Would you like to <a href="#/contact/populate">create fake contacts</a>?</li>
+		<li>No contacts in database. Would you like to <a href="#/api/populate">create fake contacts</a>?</li>
 	</ul>
 
 	<ul class="list-group" ng-switch-default>

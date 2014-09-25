@@ -15,7 +15,7 @@ angular.module('customServices', ['ngResource'])
     });
  }])
 .factory('ContactPopulate',[ '$resource', function($resource){
-    return $resource('/api/contact/populate',{}, {
+    return $resource('/api/populate',{}, {
         query: { method: 'GET', params: {contactId: ''}, isArray: true} 
     });
  }]);
