@@ -10,7 +10,9 @@ var express = require('express')
   , contact = require('./server/routes/contact')
   , customer = require('./server/routes/customer')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , mongoose = require('mongoose');
+//  , restfullCtrl = require('restfull-ctrl');
 
 var app = express();
 
@@ -34,6 +36,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//app.all('*', routes.rest);
 app.get('/', routes.index);
 
 app.get('/api/customer', customer.list);

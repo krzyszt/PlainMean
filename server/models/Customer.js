@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
 var CustomerSchema = new mongoose.Schema({
     name: String,
-    city: String
+    city: String,
+    type: String,
+    status: String,
+    description: String
 });
 var CustomerModel = mongoose.model('Customers', CustomerSchema);
 
@@ -35,4 +38,4 @@ exports.item = function(id, callback) {
       }
       
    });
-}
+};

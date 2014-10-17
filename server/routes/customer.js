@@ -9,11 +9,9 @@ var mongoose = require('mongoose');
 
 //JSON API for list of customers
 exports.list = function(req,res){
-   
       customerModel.customerlist(function(list){
          res.json(list);
-         
-      })
+      });
  };
 
  //JSON API for getting a single customer
@@ -31,7 +29,13 @@ exports.list = function(req,res){
 //JSON API for creating a new customer
 exports.create = function(req,res){
    var reqBody = req.body,
-       customerObj = {name: reqBody.name, city: reqBody.city};
+       customerObj = {
+          name: reqBody.name, 
+          city: reqBody.city,
+          status: reqBody.status,
+          type: reqBody.type,
+          description: reqBody.description
+   };
        customerModel.create(customerObj, function(err, doc){
          if(err || !doc){
             console.log('error');
