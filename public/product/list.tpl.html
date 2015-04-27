@@ -18,29 +18,22 @@
     <ul ng-switch-when="0">
         <li>No products in database. Would you like to <a href="#/api/product/0">create one</a>?</li>
     </ul>
-    <!--	<ul class="list-group" ng-switch-default>
-                    <li class="list-group-item" ng-repeat="customer in customers | filter:query">
-                            <a href="#/api/customer/{{customer._id}}">{{customer.name}}</a> <i>{{ customer.city }}</i>
-                    </li>
-            </ul>-->
 
     <table class="table table-hover" >
 
         <tbody ng-repeat="product in products| filter: query" 
-                ng-click="selectProduct(products)" ng-switch on="isSelected(product)" >
+                ng-click="selectProduct(product)" ng-switch on="isSelected(product)" >
             <tr>
                 <td> <a href="#/api/product/{{product._id}}">{{product.name}}</a> </td>
-                <td> <i>{{ product.city}}</i> </td>
-                <td> <i>{{ product.status}}</i></td>
+                <td> <i>{{ product.code}}</i></td>
                 <td> <i>{{ product.type}}</i> </td>
             </tr>
             <tr ng-switch-when="true" >
                 <td> <input type="text" ng-model="product.name" class="form-control"> </td>
-                <td> <input type="text" ng-model="product.city" class="form-control"></td>
-                <td> <input type="text" ng-model="product.status" class="form-control"></td>
-                <td> <input type="text" ng-model="product.type" class="form-control"> </td>
+                <td> <input type="text" ng-model="product.code" class="form-control"></td>
+                <td> <input type="text" ng-model="product.type" class="form-control"></td>
             </tr>
-            <tr ng-switch-when="true">
+             <tr ng-switch-when="true">
                 <td colspan="4"> <strong>Description: </strong>{{ product.description }}</td>
             </tr>        
         </tbody>

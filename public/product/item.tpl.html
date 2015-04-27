@@ -1,0 +1,34 @@
+<div class="page-header">
+    <h3>{{ pageTitle}}</h3>
+</div>
+<div class="jumbotron">
+    <form role="form" ng-submit="save()">
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" ng-model="product.name" class="form-control" id="productName" placeholder="Product name">
+        </div>
+        <div class="form-group">
+            <label for="productCode">Product Code</label>
+            <input type="text" ng-model="product.code" class="form-control" id="productCode" placeholder="Product Code">
+        </div>
+        <div class="form-group">
+            <label for="productType">Product Type</label>
+            <input type="text" ng-model="product.type" class="form-control" id="productType" placeholder="Product Type">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea rows=3 ng-model="product.description" class="form-control" id="description" placeholder="Description"></textarea>
+        </div>    
+        <p></p>
+        <hr>
+        <div class="row">
+            <div class="col-xs-6">
+                <a href="#/api/product" class="btn btn-info" role="button"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Product's List</a>
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-primary pull-right" type="submit">Save &raquo;</button>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+    </form>
+</div>
