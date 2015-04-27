@@ -3,7 +3,8 @@ angular.module('plainMean',[
     'customServices',
     'plainMean.contact',
     'plainMean.customer',
-    'plainMean.user'
+    'plainMean.user',
+    'plainMean.product'
     ])
    .config(['$routeProvider', function($routeProvider){
         $routeProvider.
@@ -15,5 +16,7 @@ angular.module('plainMean',[
             when('/api/populate', { templateUrl: 'crm/contact/populate.tpl.html', controller: 'ContactPopulateCtrl' }).
             when('/api/user', { templateUrl: 'admin/user/list.tpl.html', controller: 'UserListCtrl'}).
             when('/api/user/:id', { templateUrl: 'admin/user/item.tpl.html', controller: 'UserItemCtrl' }).
+            when('/api/product', { templateUrl: 'product/list.tpl.html', controller: 'ProductListCtrl' }).
+            when('/api/product/:id', { templateUrl: 'product/item.tpl.html', controller: 'ProductItemCtrl' }).
             otherwise({ redirectTo: '/' });
     }]);

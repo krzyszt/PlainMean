@@ -1,0 +1,50 @@
+<div class="page-header">
+    <h1>Product List</h1>
+</div>
+<div class="row">
+    <div class="col-xs-5">
+        <a href="#/api/product/0" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Product</a>
+    </div>
+    <div class="col-xs-7">
+        <input type="text" class="form-control" ng-model="query" placeholder="Search for a product">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <hr>
+    </div>
+</div>
+<div class="row" ng-switch on="products.length">
+    <ul ng-switch-when="0">
+        <li>No products in database. Would you like to <a href="#/api/product/0">create one</a>?</li>
+    </ul>
+    <!--	<ul class="list-group" ng-switch-default>
+                    <li class="list-group-item" ng-repeat="customer in customers | filter:query">
+                            <a href="#/api/customer/{{customer._id}}">{{customer.name}}</a> <i>{{ customer.city }}</i>
+                    </li>
+            </ul>-->
+
+    <table class="table table-hover" >
+
+        <tbody ng-repeat="product in products| filter: query" 
+                ng-click="selectProduct(products)" ng-switch on="isSelected(product)" >
+            <tr>
+                <td> <a href="#/api/product/{{product._id}}">{{product.name}}</a> </td>
+                <td> <i>{{ product.city}}</i> </td>
+                <td> <i>{{ product.status}}</i></td>
+                <td> <i>{{ product.type}}</i> </td>
+            </tr>
+            <tr ng-switch-when="true" >
+                <td> <input type="text" ng-model="product.name" class="form-control"> </td>
+                <td> <input type="text" ng-model="product.city" class="form-control"></td>
+                <td> <input type="text" ng-model="product.status" class="form-control"></td>
+                <td> <input type="text" ng-model="product.type" class="form-control"> </td>
+            </tr>
+            <tr ng-switch-when="true">
+                <td colspan="4"> <strong>Description: </strong>{{ product.description }}</td>
+            </tr>        
+        </tbody>
+            
+    </table>
+</div>
+<p>&nbsp;</p>

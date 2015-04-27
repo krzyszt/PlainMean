@@ -18,4 +18,9 @@ angular.module('customServices', ['ngResource'])
     return $resource('/api/populate',{}, {
         query: { method: 'GET', params: {contactId: ''}, isArray: true} 
     });
+ }])
+ .factory('Product',[ '$resource', function($resource){
+    return $resource('/api/product/:productId',{}, {
+        query: { method: 'GET', params: {productId: ''}, isArray: true} 
+    });
  }]);

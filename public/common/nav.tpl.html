@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">MeanLiberty</a>
+            <a class="navbar-brand" href="#">Plain Mean</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -14,8 +14,14 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">CRM<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a ng-href="#/api/contact">Contact</a></li>
-                        <li><a ng-href="#/api/customer">Customers</a></li>
+                        <li ng-class="{ active: isActive('/api/contact')}"><a ng-href="#/api/contact">Contact</a></li>
+                        <li ng-class="{ active: isActive('/api/customer')}"><a ng-href="#/api/customer">Customers</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Products<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-class="{ active: isActive('/api/product')}"><a ng-href="#/api/product">Product</a></li>
                     </ul>
                 </li>
             </ul>
